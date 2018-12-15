@@ -11,20 +11,20 @@ var computerGuess = [];
 
 // connect to HTML through id to visualization of guessesLeft for player .  
 
-var newGuessesLeft = function () {
+var GuessesLeft = function () {
     document.querySelector("#guessLeft").innerHTML = "Guesses Left: " + guessesLeft;
 };
 
 //computer chooses random letter from its choices in the variable at the top. console log chosen letter.
 
-var newplayerGuess = function () {
+var playerGuess = function () {
     playerGuess = letter[Math.floor(Math.random() * letter.length)];
     console.log(playerGuess);
 };
 
 //display all keys pressed by player and separate by a comma
 
-var newGuessesSoFar = function () {
+var GuessesSoFar = function () {
     document.querySelector('#playerGuess').innerHTML = "Your Guesses so far: " + playerGuessed.join(', ');
 };
 
@@ -34,9 +34,9 @@ var reset = function () {
     guessesLeft = 9;
     guessedLetters = [];
 
-    newGuessesLeft();
-    newplayerGuess();
-    newGuessesSoFar();
+    GuessesLeft();
+    playerGuess();
+    GuessesSoFar();
 }
 
 // When the player presses a key, it will run the following function...
@@ -54,11 +54,11 @@ document.onkeyup = function (event) {
 
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-//push the guessed letter to playerGuess, update var functions.
+//push the guessed letter to player Guess, update var functions.
 
     playerGuessed.push(userGuess);
-    newGuessesLeft();
-    newGuessesSoFar();
+    GuessesLeft();
+    GuessesSoFar();
 
 //when player still has guesses remaining and get letter, they win. if they have no guesses left, they lose.
     
