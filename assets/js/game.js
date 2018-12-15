@@ -17,7 +17,7 @@ var GuessesLeft = function () {
 
 //computer chooses random letter from its choices in the variable at the top. console log chosen letter.
 
-var playerGuess = function () {
+var PlayerGuess = function () {
     playerGuess = letter[Math.floor(Math.random() * letter.length)];
     console.log(playerGuess);
 };
@@ -35,7 +35,7 @@ var reset = function () {
     guessedLetters = [];
 
     GuessesLeft();
-    playerGuess();
+    PlayerGuess();
     GuessesSoFar();
 }
 
